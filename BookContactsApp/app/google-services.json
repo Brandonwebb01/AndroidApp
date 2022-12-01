@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "1084022820599",
+    "project_id": "bookcontactsapp",
+    "storage_bucket": "bookcontactsapp.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1084022820599:android:7cff801d5ff3cecda28df2",
+        "android_client_info": {
+          "package_name": "com.example.bookcontactsapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1084022820599-0cgdjbhejuglghl2cvuog270ad74qn1p.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD8GXetmOKjgRlaVbk5R8ynnHjgcUAu_SQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1084022820599-0cgdjbhejuglghl2cvuog270ad74qn1p.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
