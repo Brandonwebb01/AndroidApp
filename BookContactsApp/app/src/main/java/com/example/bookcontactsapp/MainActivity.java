@@ -1,6 +1,8 @@
 package com.example.bookcontactsapp;
 
+import android.app.Activity;
 import android.os.Bundle;
+import android.view.inputmethod.InputMethodManager;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
