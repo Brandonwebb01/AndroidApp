@@ -15,8 +15,8 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import com.example.bookcontactsapp.R;
-import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
+//import com.google.firebase.database.DatabaseReference;
+//import com.google.firebase.database.FirebaseDatabase;
 
 import java.util.HashMap;
 
@@ -25,8 +25,8 @@ public class FormFragment extends Fragment {
     private FormViewModel mViewModel;
     EditText FirstNameText, LastNameText, EmailAddressText, AddressText, PhoneNumberText, NotesText;
     Button enterDataBtn;
-    private FirebaseDatabase db = FirebaseDatabase.getInstance();
-    private DatabaseReference root = db.getReference().child("Users");
+    //private FirebaseDatabase db = FirebaseDatabase.getInstance();
+    //private DatabaseReference root = db.getReference().child("Users");
 
     public static FormFragment newInstance() {
         return new FormFragment();
@@ -69,7 +69,7 @@ public class FormFragment extends Fragment {
             userMap.put("phoneNumber" , phoneNumber);
             userMap.put("notes" , notes);
 
-            root.push().setValue(userMap);
+            //root.push().setValue(userMap);
 
             FirstNameText.getText().clear();
             LastNameText.getText().clear();

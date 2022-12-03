@@ -1,4 +1,4 @@
-package com.example.bookcontactsapp.ui;
+package com.example.bookcontactsapp;
 
 import androidx.appcompat.app.AppCompatActivity;
 
