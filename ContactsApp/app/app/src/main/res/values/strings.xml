@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">BookContactsApp</string>
+    <string name="title_splash">Splash</string>
+    <string name="title_form">Form</string>
+    <string name="title_database">Database</string>
+    <string name="title_credits">Credits</string>
+</resources>
