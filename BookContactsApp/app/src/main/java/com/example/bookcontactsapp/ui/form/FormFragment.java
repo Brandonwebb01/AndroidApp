@@ -1,20 +1,25 @@
 package com.example.bookcontactsapp.ui.form;
 
+import android.content.Context;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.fragment.app.Fragment;
 
 import android.util.Patterns;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
 import com.example.bookcontactsapp.R;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 //import com.google.firebase.database.DatabaseReference;
 //import com.google.firebase.database.FirebaseDatabase;
 
@@ -25,8 +30,9 @@ public class FormFragment extends Fragment {
     private FormViewModel mViewModel;
     EditText FirstNameText, LastNameText, EmailAddressText, AddressText, PhoneNumberText, NotesText;
     Button enterDataBtn;
-    //private FirebaseDatabase db = FirebaseDatabase.getInstance();
-    //private DatabaseReference root = db.getReference().child("Users");
+    private FirebaseDatabase db = FirebaseDatabase.getInstance();
+    private DatabaseReference root = db.getReference().child("Users");
+    private ConstraintLayout cLayout;
 
     public static FormFragment newInstance() {
         return new FormFragment();
@@ -35,7 +41,10 @@ public class FormFragment extends Fragment {
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container,
                              @Nullable Bundle savedInstanceState) {
+
         View view = inflater.inflate(R.layout.fragment_form, container, false);
+
+        cLayout = (ConstraintLayout) view.findViewById(R.id.constraint_layout);
 
         FirstNameText = view.findViewById(R.id.firstNameText);
         LastNameText = view.findViewById(R.id.lastNameText);
@@ -46,6 +55,15 @@ public class FormFragment extends Fragment {
         enterDataBtn = view.findViewById(R.id.submitBtn);
 
         enterDataBtn.setOnClickListener(v-> enterData());
+
+        cLayout.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view) {
+                InputMethodManager inputMethodManager = (InputMethodManager) view.getContext().getSystemService(Context.INPUT_METHOD_SERVICE);
+                inputMethodManager.hideSoftInputFromWindow(view.getWindowToken(),0);
+            }
+        });
+
 
         return view;
     }
@@ -69,7 +87,7 @@ public class FormFragment extends Fragment {
             userMap.put("phoneNumber" , phoneNumber);
             userMap.put("notes" , notes);
 
-            //root.push().setValue(userMap);
+            root.push().setValue(userMap);
 
             FirstNameText.getText().clear();
             LastNameText.getText().clear();

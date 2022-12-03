@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".ui.form.FormFragment"
+    android:id="@+id/constraint_layout"
     android:background="#72C5E6">
 
     <EditText
